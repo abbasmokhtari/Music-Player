@@ -20,15 +20,60 @@ body {
 }
 
 .music-container {
-    background-color: #fff;
-    border-radius: 20px;
-    box-shadow: 10px 10px 10px 0 rgba(70, 71, 146, 0.7);
-    display: flex;
-    padding: 20px 30px;
-    position: relative;
-    margin: 100px 0;
-    /* we want to keep in on top all the times */
-    z-index: 10;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 10px 10px 10px 0 rgba(70, 71, 146, 0.7);
+  display: flex;
+  padding: 20px 30px;
+  position: relative;
+  margin: 100px 0;
+  /* we want to keep in on top all the times */
+  z-index: 10;
+}
+
+.img-container {
+  position: relative;
+  width: 110px;
+}
+
+.img-container::after {
+  content: '';
+  background-color: white;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+  /* to push the white circle to the centre  */
+  transform: translate(-50%, -50%);
+}
+
+.img-container img {
+  /* when image is bigger than its container */
+  width: inherit;
+  height: 105px;
+  /* to make image circle border radius 50% */
+  border-radius: 50%;
+  object-fit: cover;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  /* to make animation */
+  animation: rotate 10s linear infinite;
+
+  /* we want it to animate just when it's playing so now we put it to pause */
+  animation-play-state: paused;
 }
 
 
+/* creating keyframe for rotation  */
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
