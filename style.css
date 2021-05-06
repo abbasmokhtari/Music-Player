@@ -66,14 +66,52 @@ body {
   animation-play-state: paused;
 }
 
+/* what we here say is that if there is a class called play added to music container then start the animatio */
+.music-container.play .img-container img {
+  animation-play-state: running;
+}
 
 /* creating keyframe for rotation  */
 @keyframes rotate {
-    from {
-        transform: rotate(0deg);
-    }
+  from {
+    transform: rotate(0deg);
+  }
 
-    to {
-        transform: rotate(360deg);
-    }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+/* styling the buttons */
+.action-btn {
+  background-color: white;
+  border: 0;
+  color: #dfdbdf;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 10px;
+  margin: 0 20px;
+}
+
+.action-btn-big {
+  color: #cdc2d0;
+  font-size: 30px;
+}
+
+/* to make sure there is no outline when clicked */
+.action-btn-big:focus {
+  outline: 0;
+}
+
+.music-info {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 15px 15px 0 0;
+  
 }
