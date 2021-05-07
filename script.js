@@ -53,7 +53,6 @@ function prevSong() {
   if (songIndex < 0) {
     songIndex = songs.length - 1
   }
-    audio.pause()
     loadSong(songs[songIndex])
     audio.play()
 }
@@ -64,7 +63,6 @@ function nextSong() {
     if (songIndex === songs.length) {
         songIndex = 0
     }
-    audio.pause()
     loadSong(songs[songIndex])
     audio.play()
 }
