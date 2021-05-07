@@ -66,6 +66,12 @@ function nextSong() {
     loadSong(songs[songIndex])
     audio.play()
 }
+
+function udpateProgress() {
+    
+}
+
+
 //event listeners
 
 playBtn.addEventListener('click', () => {
@@ -82,3 +88,6 @@ playBtn.addEventListener('click', () => {
 // change song events
 prevBtn.addEventListener('click', prevSong)
 nextBtn.addEventListener('click', nextSong)
+
+//we need time update to work on progress bar
+audio.addEventListener('timeupdate', udpateProgress)
