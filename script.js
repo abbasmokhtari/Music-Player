@@ -1,4 +1,4 @@
-const musicContainer = document.querySelector('.music-contianer')
+const musicContainer = document.querySelector('.music-container')
 const playBtn = document.querySelector('#play')
 const prevBtn = document.querySelector('#prev')
 const nextBtn = document.querySelector('#next')
@@ -7,7 +7,6 @@ const progress = document.querySelector('.progress')
 const progressContainer = document.querySelector('.progress-container')
 const title = document.querySelector('#title')
 const cover = document.querySelector('#cover')
-
 
 //song titles
 const songs =['hey', 'summer', 'ukulele']
@@ -30,3 +29,34 @@ function loadSong(song) {
     cover.src = `images/${song}.jpg`
 
 }
+
+function playSong() {
+    //when played we need to add play class
+    musicContainer.classList.add('play')
+    // we need to change the icon 
+    playBtn.querySelector('i').classList.remove('fa-play')
+    playBtn.querySelector('i').classList.add('fa-pause')
+}
+
+function pauseSong() {
+    //when paused we need to remove play class
+    musicContainer.classList.remove('play')
+    // icon is changed back to play 
+    playBtn.querySelector('i').classList.add('fa-play')
+    playBtn.querySelector('i').classList.remove('fa-pause')
+    
+}
+
+
+//event listeners
+
+playBtn.addEventListener('click', () => {
+    //we want to check and see if a song is playin
+    const isPlaying = musicContainer.classList.contains('play')
+
+    if (isPlaying) {
+        pauseSong()
+    } else {
+        playSong()
+    }
+})

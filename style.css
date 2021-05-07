@@ -121,7 +121,7 @@ body {
   opacity: 0;
   transform: translateY(0%);
   transition: transform 0.3s ease-in, opacity 0.3s ease-in;
-  z-index: 0;
+  /* z-index: 0; */
 }
 
 .music-container.play .music-info {
